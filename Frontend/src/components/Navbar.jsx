@@ -325,13 +325,13 @@ const Navbar = () => {
           <span className="text-gray-400">Bag Subtotal</span>
           <span className="text-xs text-gray-950">₹2,797</span>
         </div>
-        <button 
-          onClick={() => { setIsCartOpen(false); navigate('/cart'); }}
-          className="w-full py-3 bg-gradient-to-r from-[#8A1BDF] via-[#D500B8] to-[#F8009D] text-white text-[9px] font-black uppercase tracking-[0.15em] rounded-xl hover:opacity-95 transition-all shadow-sm flex items-center justify-center gap-1 group"
-        >
-          <span>Proceed To Bag Checkout</span>
-          <ChevronRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
-        </button>
+       <button 
+  onClick={() => { setIsCartOpen(false); navigate('/cart'); }}
+  className="w-full py-3 sm:py-3.5 px-4 bg-gradient-to-r from-[#8A1BDF] via-[#D500B8] to-[#F8009D] text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.15em] rounded-xl hover:opacity-95 transition-all shadow-sm flex items-center justify-center gap-1.5 group"
+>
+  <span>Proceed To Bag Checkout</span>
+  <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform flex-shrink-0" />
+</button>
       </div>
       
     </div>

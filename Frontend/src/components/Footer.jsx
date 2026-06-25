@@ -57,10 +57,10 @@ const Footer = () => {
           <div className="flex flex-col space-y-4">
             <div className="flex items-center group cursor-default">
               <div className="w-10 h-10 bg-white text-gray-950 rounded-xl flex items-center justify-center mr-3 font-black text-lg shadow-sm">
-                C
+                M
               </div>
               <div className="flex flex-col leading-none">
-                <h4 className="text-lg font-black uppercase tracking-wider italic">Chiramel</h4>
+                <h4 className="text-lg font-black uppercase tracking-wider italic">Mouin</h4>
                 <span className="text-[8px] font-black text-white/60 uppercase tracking-[0.4em] mt-0.5 font-nunito">Garments</span>
               </div>
             </div>

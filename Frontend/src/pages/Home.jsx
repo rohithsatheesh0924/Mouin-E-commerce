@@ -208,13 +208,13 @@ const Home = () => {
           </div>
 
           {/* Right Side: Background-Removed Image */}
-          <div className="lg:col-span-7 relative flex items-center justify-center p-8 md:p-12">
-            <img 
-              src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1600" 
-              alt="Fashion Showcase Campaign" 
-              className="w-full h-full max-h-[500px] object-contain drop-shadow-2xl" 
-            />
-          </div>
+         <div className="lg:col-span-7 relative flex items-center justify-center p-8 md:p-12">
+  <img 
+    src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1600" 
+    alt="Fashion Showcase Campaign" 
+    className="w-full h-full max-h-[500px] object-contain rounded-3xl overflow-hidden drop-shadow-2xl" 
+  />
+</div>
         </section>
 
         {/* === CATEGORIES SECTION === */}
@@ -285,13 +285,13 @@ const Home = () => {
           <div className="absolute bottom-10 left-10 w-48 h-48 bg-[#00C9A7]/20 rounded-full blur-3xl pointer-events-none" />
           
           {/* Left Side: Background-Removed Image */}
-          <div className="lg:col-span-7 relative flex items-center justify-center p-8 md:p-12">
-            <img 
-              src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1600" 
-              alt="Summer Collection Showcase" 
-              className="w-full h-full max-h-[400px] object-contain drop-shadow-2xl" 
-            />
-          </div>
+        <div className="lg:col-span-7 relative flex items-center justify-center p-8 md:p-12 rounded-3xl overflow-hidden">
+  <img 
+    src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1600" 
+    alt="Summer Collection Showcase" 
+    className="w-full h-full max-h-[400px] object-contain rounded-3xl drop-shadow-2xl" 
+  />
+</div>
 
           {/* Right Side: Text Content */}
           <div className="lg:col-span-5 p-8 md:p-12 flex flex-col justify-center text-white relative z-10">

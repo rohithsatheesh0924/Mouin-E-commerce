@@ -52,12 +52,12 @@ function App() {
     <Router>
       <Routes>
         {/* === AUTHENTICATION ROUTES (No Navbar, No Footer) === */}
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
         {/* === PROTECTED STOREFRONT ROUTES (Includes Navbar & Footer) === */}
         <Route element={<StoreLayout />}>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/shop/:category" element={<CategoryPage />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/checkout/shipping" element={<Shipping />} />

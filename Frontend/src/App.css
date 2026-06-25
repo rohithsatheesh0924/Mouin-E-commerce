@@ -1,0 +1,46 @@
+/* src/App.css */
+
+/* Import Google font face definitions */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700;900&display=swap');
+
+/* Apply base systemic layout font metrics */
+:root {
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 700 !important; /* Forces Bold baseline weight globally */
+}
+
+/* Override standard body, form field components, and input properties */
+html, 
+body, 
+#root,
+input, 
+select, 
+textarea, 
+button {
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* Ensure placeholder attributes inherit the structural typography weight */
+input::placeholder,
+textarea::placeholder {
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* Keep structural heavy weight modifiers mapped to font-weight: 900 */
+.font-black,
+h1,
+h2,
+.font-extrabold {
+  font-weight: 900 !important;
+}
+
+/* Eliminate active horizontal web layout layout bounds */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

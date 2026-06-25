@@ -127,13 +127,15 @@ const CategoryPage = () => {
           </div>
           
           {/* Right Side: Background-Removed Image (No Box) */}
-          <div className="lg:col-span-7 relative flex items-center justify-center p-8 md:p-12">
-            <img 
-              src={getCategoryImage()} 
-              alt={`${title} Campaign`} 
-              className="w-full h-full max-h-[400px] object-contain drop-shadow-2xl" 
-            />
-          </div>
+<div className="lg:col-span-7 relative flex items-center justify-center p-8 md:p-12">
+  <div className="w-full h-full max-h-[400px] flex items-center justify-center rounded-3xl overflow-hidden">
+    <img 
+      src={getCategoryImage()} 
+      alt={`${title} Campaign`} 
+      className="w-full h-full max-h-[400px] object-cover rounded-3xl drop-shadow-2xl" 
+    />
+  </div>
+</div>
         </section>
 
         {/* === FILTER & UTILITY BAR === */}

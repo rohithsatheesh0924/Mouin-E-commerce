@@ -64,7 +64,7 @@ const Navbar = () => {
   const navLinks = [
     {
       name: 'Home',
-      path: '/home',
+      path: '/',
     },
     { 
       name: 'Men', 
@@ -244,7 +244,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="border-t border-gray-100 py-1 text-xs font-black uppercase tracking-wider">
-                      <button onClick={() => navigate('/')} className="w-full px-4 py-2.5 text-left text-red-500 hover:bg-red-50 flex items-center gap-3 transition-colors">
+                      <button onClick={() => navigate('/login')} className="w-full px-4 py-2.5 text-left text-red-500 hover:bg-red-50 flex items-center gap-3 transition-colors">
                         <LogOut size={14} /> Disconnect
                       </button>
                     </div>
@@ -265,61 +265,78 @@ const Navbar = () => {
               </button>
 
               {/* Cart Drawer Anchor Button */}
-              <div className="relative" ref={cartRef}>
-                <button 
-                  onClick={() => setIsCartOpen(!isCartOpen)}
-                  className="p-2 sm:p-2.5 bg-gradient-to-r from-[#8A1BDF] to-[#D500B8] text-white rounded-xl hover:opacity-95 shadow-sm relative transition-opacity min-w-[40px] min-h-[44px] flex items-center justify-center"
-                  aria-label="Shopping Cart Storage"
-                >
-                  <ShoppingBag size={20} />
-                  <span className="absolute -top-1 -right-1 bg-[#F04A00] text-white text-[8px] font-black rounded-full w-4.5 h-4.5 flex items-center justify-center ring-2 ring-white font-nunito">
-                    {cartItems.length}
-                  </span>
-                </button>
+<div className="relative font-quicksand" ref={cartRef}>
+  <button 
+    onClick={() => setIsCartOpen(!isCartOpen)}
+    className="p-2 sm:p-2.5 bg-gradient-to-r from-[#8A1BDF] to-[#D500B8] text-white rounded-xl hover:opacity-95 shadow-sm relative transition-all min-w-[42px] min-h-[42px] flex items-center justify-center group"
+    aria-label="Shopping Cart Storage"
+  >
+    <ShoppingBag size={18} className="group-hover:scale-102 transition-transform" />
+    
+    {/* High-Visibility Professional Badge Control */}
+    <span className="absolute -top-1.5 -right-1.5 bg-[#F04A00] text-white text-[9px] font-black rounded-lg w-5 h-5 flex items-center justify-center border-2 border-white shadow-sm">
+      {cartItems.length}
+    </span>
+  </button>
 
-                {isCartOpen && (
-                  <div className="absolute right-0 mt-3 w-76 sm:w-96 bg-white rounded-2xl shadow-xl border border-gray-100 animate-in fade-in slide-in-from-top-2 duration-200 font-nunito z-50">
-                    <div className="p-4 border-b border-gray-100 bg-gradient-to-r from-[#F8009D]/5 to-[#8A1BDF]/5">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-xs font-black uppercase tracking-wider text-gray-900">Shopping Bag ({cartItems.length})</h3>
-                        <button onClick={() => setIsCartOpen(false)} className="p-1 hover:bg-gray-50 rounded-lg transition-colors text-gray-400">
-                          <X size={15} />
-                        </button>
-                      </div>
-                    </div>
+  {/* Dropdown Matrix Overlay */}
+  {isCartOpen && (
+    <div className="absolute right-0 mt-3 w-76 sm:w-80 bg-white rounded-xl shadow-xl border border-gray-100 animate-in fade-in slide-in-from-top-2 duration-200 z-50 overflow-hidden">
+      
+      {/* Header Panel Curation */}
+      <div className="p-4 border-b border-gray-100 bg-gradient-to-r from-[#F8009D]/5 to-[#8A1BDF]/5">
+        <div className="flex items-center justify-between">
+          <h3 className="text-[10px] font-black uppercase tracking-wider text-gray-900">
+            Shopping Bag ({cartItems.length})
+          </h3>
+          <button 
+            onClick={() => setIsCartOpen(false)} 
+            className="p-1 hover:bg-gray-100 rounded-lg transition-colors text-gray-400 hover:text-gray-900"
+          >
+            <X size={14} />
+          </button>
+        </div>
+      </div>
 
-                    <div className="max-h-60 overflow-y-auto pr-0.5 no-scrollbar">
-                      {cartItems.map((item) => (
-                        <div key={item.id} className="p-3 sm:p-4 border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
-                          <div className="flex gap-3">
-                            <img src={item.img} alt={item.name} className="w-12 h-16 object-cover rounded-lg bg-gray-50 border border-gray-100/50" />
-                            <div className="flex-1 min-w-0">
-                              <h4 className="text-xs font-bold text-gray-800 truncate">{item.name}</h4>
-                              <div className="flex items-center gap-2 mt-1.5 text-[11px]">
-                                <span className="font-black text-gray-950">₹{item.price}</span>
-                                <span className="text-gray-400 font-medium">Qty: {item.qty}</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="p-4 border-t border-gray-100 bg-gray-50/50 space-y-4">
-                      <div className="flex justify-between items-center text-xs font-black uppercase tracking-wider">
-                        <span className="text-gray-400">Bag Subtotal:</span>
-                        <span className="text-sm text-gray-950">₹2,797</span>
-                      </div>
-                      <button 
-                        onClick={() => navigate('/cart')}
-                        className="w-full py-3 bg-gradient-to-r from-[#8A1BDF] to-[#D500B8] text-white text-[10px] font-black uppercase tracking-[0.15em] rounded-xl hover:opacity-95 transition-opacity"
-                      >
-                        Proceed To Bag Checkout
-                      </button>
-                    </div>
-                  </div>
-                )}
+      {/* High-Density Item Scroll Grid List */}
+      <div className="max-h-60 overflow-y-auto pr-0.5 no-scrollbar bg-white">
+        {cartItems.map((item) => (
+          <div key={item.id} className="p-3 border-b border-gray-50 hover:bg-gray-50/40 transition-colors group">
+            <div className="flex gap-3 items-center">
+              <div className="w-10 h-14 overflow-hidden rounded-lg bg-gray-50 border border-gray-100 flex-shrink-0">
+                <img src={item.img} alt={item.name} className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" />
               </div>
+              <div className="flex-1 min-w-0">
+                <h4 className="text-xs font-bold text-gray-800 truncate">{item.name}</h4>
+                <div className="flex items-center gap-2 mt-1 text-[10px]">
+                  <span className="font-black text-gray-950">₹{item.price}</span>
+                  <span className="w-1 h-1 bg-gray-200 rounded-full"></span>
+                  <span className="text-gray-400 font-bold">Qty: {item.qty}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Ledger Actions Call Footer panel */}
+      <div className="p-4 border-t border-gray-100 bg-gray-50/50 space-y-3.5">
+        <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-wider">
+          <span className="text-gray-400">Bag Subtotal</span>
+          <span className="text-xs text-gray-950">₹2,797</span>
+        </div>
+        <button 
+          onClick={() => { setIsCartOpen(false); navigate('/cart'); }}
+          className="w-full py-3 bg-gradient-to-r from-[#8A1BDF] via-[#D500B8] to-[#F8009D] text-white text-[9px] font-black uppercase tracking-[0.15em] rounded-xl hover:opacity-95 transition-all shadow-sm flex items-center justify-center gap-1 group"
+        >
+          <span>Proceed To Bag Checkout</span>
+          <ChevronRight size={12} className="group-hover:translate-x-0.5 transition-transform" />
+        </button>
+      </div>
+      
+    </div>
+  )}
+</div>
             </div>
 
           </div>

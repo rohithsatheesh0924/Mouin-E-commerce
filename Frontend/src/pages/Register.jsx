@@ -182,7 +182,7 @@ const Register = () => {
           <footer className="mt-6 pt-5 border-t border-gray-100 text-center font-['Quicksand']">
             <p className="text-xs text-gray-400 font-bold uppercase tracking-wide">
               Already have an account? 
-              <Link to="/" className="text-[#D500B8] font-black ml-1.5 hover:text-[#8A1BDF] transition-colors underline underline-offset-4 decoration-1">
+              <Link to="/login" className="text-[#D500B8] font-black ml-1.5 hover:text-[#8A1BDF] transition-colors underline underline-offset-4 decoration-1">
                 Sign In
               </Link>
             </p>
